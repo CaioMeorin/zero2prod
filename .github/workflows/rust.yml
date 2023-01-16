@@ -21,10 +21,10 @@ jobs:
     - name: Run tests
       run: cargo test --verbose
     - name: Tarpaulin check
-      run: cargo tarpaulin --ignore-tests
+      run: cargo install cargo-tarpaulin && cargo tarpaulin --ignore-tests
     - name: Clippy
       run: cargo clippy -- -D warnings
     - name: Formatting
       run: cargo fmt -- --check
     - name: Security Audit
-      run: cargo audit
+      run: cargo install cargo-audit && cargo audit
